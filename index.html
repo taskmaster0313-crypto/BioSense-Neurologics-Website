@@ -81,10 +81,7 @@
     NeuroMetrix™ Early Risk Panel – kit de 96 determinaciones
   </div>
       
- <img src="caja-detras.png" alt="Vista posterior de la caja NeuroMetrix" />
-  <div class="card-caption">
-    Vista posterior del packaging del kit NeuroMetrix™
-</div>
+ 
 
           </div>
         </div>
@@ -330,5 +327,31 @@
       btn.addEventListener('click', () => nav.classList.toggle('open'));
     });
   </script>
-</body>
+</body
+  <script>
+  const images = ["caja.png", "caja-detras.png"];
+  let currentIndex = 0;
+  const sliderImage = document.getElementById("slider-image");
+
+  function showImage(index) {
+    sliderImage.style.opacity = 0;
+    setTimeout(() => {
+      sliderImage.src = images[index];
+      sliderImage.style.opacity = 1;
+    }, 200);
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  setInterval(nextImage, 4000);
+</script>
+
 </html>
