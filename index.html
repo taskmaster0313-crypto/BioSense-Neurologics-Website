@@ -327,31 +327,38 @@
       btn.addEventListener('click', () => nav.classList.toggle('open'));
     });
   </script>
-</body
   <script>
-  const images = ["caja.png", "caja-detras.png"];
-  let currentIndex = 0;
-  const sliderImage = document.getElementById("slider-image");
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = ["caja.png", "caja-detras.png"];
+    let currentIndex = 0;
+    const sliderImage = document.getElementById("slider-image");
 
-  function showImage(index) {
-    sliderImage.style.opacity = 0;
-    setTimeout(() => {
-      sliderImage.src = images[index];
-      sliderImage.style.opacity = 1;
-    }, 200);
-  }
+    function showImage(index) {
+      sliderImage.style.opacity = 0;
+      setTimeout(() => {
+        sliderImage.src = images[index];
+        sliderImage.style.opacity = 1;
+      }, 200);
+    }
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  }
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
 
-  setInterval(nextImage, 4000);
+    // Hacemos visibles las funciones para los botones
+    window.nextImage = nextImage;
+    window.prevImage = prevImage;
+
+    // Cambio automático cada 4 segundos
+    setInterval(nextImage, 4000);
+  });
 </script>
 
+</body
 </html>
