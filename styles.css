@@ -168,21 +168,25 @@ body {
         grid-template-columns: 1fr; /* Una columna en móviles */
     }
 }
+/* Título de contacto con subrayado elegante - VERSIÓN FORZADA */
 #contacto h2 {
-    color: var(--text-main);
-    position: relative;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    color: var(--text-main) !important;
+    position: relative !important;
+    padding-bottom: 20px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    display: block !important;
 }
 
 #contacto h2::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px; /* Línea corta y elegante */
-    height: 4px;
-    background: var(--accent-gradient); /* Usamos tu degradado morado */
-    border-radius: 2px;
+    content: "" !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 60px !important; 
+    height: 6px !important; /* Un poco más gruesa para que se note */
+    background: linear-gradient(90deg, #8e44ad, #658def) !important; 
+    border-radius: 10px !important;
+    display: block !important;
 }
