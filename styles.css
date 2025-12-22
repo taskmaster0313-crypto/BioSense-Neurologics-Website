@@ -1,3 +1,4 @@
+/* --- VARIABLES Y CONFIGURACIÓN BASE --- */
 :root {
   --purple-main: #8e44ad;
   --purple-dark: #673ab7;
@@ -7,9 +8,11 @@
   --text-muted: #5f6d7a;
   --radius: 12px;
   --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --accent-gradient: linear-gradient(90deg, #8e44ad, #658def);
 }
 
 * { box-sizing: border-box; }
+
 body { 
   font-family: 'Inter', system-ui, sans-serif; 
   margin: 0; 
@@ -20,9 +23,7 @@ body {
 
 /* --- ESTRUCTURA --- */
 .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-.container.narrow { max-width: 850px; }
 .section { padding: 80px 0; }
-.section.light { background-color: var(--bg-soft); }
 
 /* --- HEADER --- */
 .site-header { 
@@ -34,335 +35,96 @@ body {
 .header-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { height: 50px; width: auto; }
 .nav { display: flex; gap: 20px; align-items: center; }
-.nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; }
+.nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; transition: 0.3s; }
+.nav a:hover { color: var(--purple-main); }
 
-/* --- HERO (LA CAJA) --- */
+/* --- HERO --- */
 .hero { padding: 100px 0; background: linear-gradient(135deg, #fff 0%, #f4f7ff 100%); }
 .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
 .hero-text h1 { font-size: 3rem; color: var(--purple-dark); line-height: 1.1; margin-bottom: 20px; }
-.hero-media img { 
-  max-width: 100%; 
-  height: auto; 
-  border-radius: var(--radius); 
-  box-shadow: var(--shadow); 
-}
+.hero-media img { max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
 
-/* --- EQUIPO (CIRCULAR) --- */
-.team-grid { 
+/* --- SECCIÓN PRODUCTO (RIGOR CIENTÍFICO) --- */
+.product-expert { background-color: #ffffff; padding: 100px 0; border-top: 1px solid #eee; }
+.eyebrow { color: var(--purple-main); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.85rem; display: block; margin-bottom: 10px; text-align: center; }
+.product-header { text-align: center; max-width: 800px; margin: 0 auto 60px; }
+.lead-text { font-size: 1.1rem; color: var(--text-muted); }
+
+/* Grid de especificaciones */
+.tech-specs-grid { 
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
-  gap: 30px; 
-  margin-top: 40px; 
-}
-.team-card { 
-  background: white; padding: 30px; border-radius: var(--radius); 
-  text-align: center; border: 1px solid #eee; transition: 0.3s;
-}
-.team-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
-.img-container { 
-  width: 140px; height: 140px; margin: 0 auto 20px; 
-  border-radius: 50%; overflow: hidden; border: 4px solid var(--purple-main);
-}
-.team-img { width: 100%; height: 100%; object-fit: cover; }
-.team-role { color: var(--purple-main); font-weight: 700; display: block; text-transform: uppercase; font-size: 0.8rem; }
-
-/* --- ENCUESTA (GOOGLE STYLE) --- */
-.survey-background { background: #f0f2f1; padding: 60px 0; }
-.form-card { background: white; padding: 30px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #dadce0; }
-.header-card { border-top: 10px solid var(--purple-main); }
-.scale { display: flex; gap: 10px; background: #f8f9fa; padding: 10px; border-radius: 20px; width: fit-content; }
-
-/* --- BOTONES --- */
-.btn-primary { 
-  background: linear-gradient(90deg, var(--purple-main), var(--blue-soft)); 
-  color: white; border: none; padding: 12px 30px; border-radius: 8px; 
-  font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block;
-}
-.btn-outline { border: 2px solid var(--purple-main); color: var(--purple-main); padding: 8px 16px; border-radius: 8px; text-decoration: none; }
-
-/* --- AJUSTES DE IMÁGENES GRANDES --- */
-.product-large-img { 
-  max-width: 400px !important; 
-  margin: 40px auto; 
-  display: block; 
-}
-/* GRID DE CONTACTO */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Formulario más ancho que la info */
-    gap: 40px;
-    align-items: start;
-    margin-top: 30px;
-}
-
-/* FORMULARIO */
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: var(--text-main);
-}
-
-.contact-form input, 
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
-    font-family: inherit;
-    transition: all 0.3s;
-}
-
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    border-color: var(--purple-main);
-    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.1);
-    outline: none;
-}
-
-.form-actions {
-    display: flex;
-    gap: 15px;
-}
-
-/* TARJETA DE INFORMACIÓN (Derecha) */
-.contact-info-card {
-    background: white;
-    padding: 35px;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid #eee;
-    text-align: left;
-}
-
-.info-item {
-    margin-bottom: 25px;
-}
-
-.info-item h4 {
-    margin: 0 0 5px 0;
-    color: var(--purple-main);
-    font-size: 1rem;
-}
-
-.info-item p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.info-footer {
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    font-size: 0.9rem;
-}
-
-/* RESPONSIVE */
-@media(max-width: 850px) {
-    .contact-grid {
-        grid-template-columns: 1fr; /* Una columna en móviles */
-    }
-}
-/* Título de contacto con subrayado elegante - VERSIÓN FORZADA */
-#contacto h2 {
-    color: var(--text-main) !important;
-    position: relative !important;
-    padding-bottom: 20px !important;
-    margin-bottom: 20px !important;
-    text-align: center !important;
-    display: block !important;
-}
-
-#contacto h2::after {
-    content: "" !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: 60px !important; 
-    height: 6px !important; /* Un poco más gruesa para que se note */
-    background: linear-gradient(90deg, #8e44ad, #658def) !important; 
-    border-radius: 10px !important;
-    display: block !important;
-}
-/* DISEÑO DE PRODUCTO */
-.product-info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
-    margin-top: 40px;
-    text-align: left;
-}
-
-.biomarker-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.biomarker-list li {
-    background: white;
-    margin-bottom: 10px;
-    padding: 12px 18px;
-    border-radius: 8px;
-    border-left: 4px solid var(--purple-main);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-    font-size: 0.95rem;
-}
-
-.biomarker-list strong {
-    color: var(--purple-main);
-}
-
-.product-visual {
-    position: relative;
-    text-align: center;
-}
-
-.product-badge {
-    position: absolute;
-    bottom: -10px;
-    right: 20%;
-    background: var(--accent-gradient);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.icon-circle {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    display: inline-block;
-}
-
-/* RESPONSIVE PRODUCTO */
-@media(max-width: 850px) {
-    .product-info-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
-/* SECCIÓN PRODUCTO - ESTILO CIENTÍFICO */
-.product-expert {
-    background-color: #ffffff;
-    padding: 100px 0;
-    border-top: 1px solid #eee;
-}
-
-.eyebrow {
-    color: var(--purple-main);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.product-header {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-}
-
-.lead-text {
-    font-size: 1.1rem;
-    color: var(--text-muted);
+  grid-template-columns: 1.2fr 0.8fr; 
+  gap: 50px; 
+  align-items: center; 
+  background: var(--bg-soft); 
+  padding: 40px; 
+  border-radius: 20px; 
 }
 
 /* Tabla de Biomarcadores */
-.tech-specs-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 60px;
-    align-items: center;
-    background: var(--bg-soft);
-    padding: 50px;
-    border-radius: 20px;
+.biomarker-table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  background: white; 
+  border-radius: 10px; 
+  overflow: hidden; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
 }
+.biomarker-table th, .biomarker-table td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+.biomarker-table th { background: var(--purple-main); color: white; font-weight: 600; }
 
-.biomarker-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
+/* Contenedor de Imagen de Producto */
+.image-overlay-card { 
+  background: white; 
+  padding: 20px; 
+  border-radius: 15px; 
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
+  text-align: center;
 }
-
-.biomarker-table th, .biomarker-table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
+.image-overlay-card img { 
+  width: 100%; 
+  max-width: 320px; /* Tamaño controlado para que no sea gigante */
+  height: auto; 
+  display: block; 
+  margin: 0 auto; 
 }
-
-.biomarker-table th {
-    background: var(--purple-main);
-    color: white;
-    font-weight: 600;
-}
-
-.biomarker-table tr:hover {
-    background: rgba(142, 68, 173, 0.05);
-}
-
-/* Imagen y Tag */
-.image-overlay-card {
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    border-radius: 15px;
-    overflow: hidden;
-    background: white;
-    padding: 20px;
-}
-
-.tech-tag {
-    background: #2c3e50;
-    color: white;
-    padding: 8px 15px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 15px;
-    border-radius: 4px;
+.tech-tag { 
+  background: #2c3e50; 
+  color: white; 
+  padding: 6px 12px; 
+  font-size: 0.75rem; 
+  font-weight: bold; 
+  display: inline-block; 
+  margin-top: 15px; 
+  border-radius: 4px; 
 }
 
 /* Propuesta de valor */
-.value-proposition {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 60px;
-}
+.value-proposition { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 60px; }
+.value-item { border-left: 3px solid var(--purple-main); padding-left: 20px; }
+.value-item h4 { margin: 0 0 10px 0; color: var(--text-main); font-size: 1.1rem; }
+.value-item p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
 
-.value-item {
-    border-left: 3px solid var(--purple-main);
-    padding-left: 25px;
-}
+/* --- EQUIPO --- */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; margin-top: 40px; }
+.team-card { background: white; padding: 30px; border-radius: var(--radius); text-align: center; border: 1px solid #eee; transition: 0.3s; }
+.team-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+.img-container { width: 140px; height: 140px; margin: 0 auto 20px; border-radius: 50%; overflow: hidden; border: 4px solid var(--purple-main); }
+.team-img { width: 100%; height: 100%; object-fit: cover; }
+.team-role { color: var(--purple-main); font-weight: 700; display: block; text-transform: uppercase; font-size: 0.8rem; }
 
-.value-item h4 {
-    margin: 0 0 10px 0;
-    color: var(--text-main);
-    font-size: 1.1rem;
-}
+/* --- CONTACTO --- */
+#contacto h2 { color: var(--text-main) !important; position: relative !important; padding-bottom: 20px !important; margin-bottom: 20px !important; text-align: center !important; display: block !important; }
+#contacto h2::after { content: "" !important; position: absolute !important; bottom: 0 !important; left: 50% !important; transform: translateX(-50%) !important; width: 60px !important; height: 6px !important; background: var(--accent-gradient) !important; border-radius: 10px !important; }
+.contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; margin-top: 30px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 8px; margin-top: 5px; }
+.contact-info-card { background: white; padding: 35px; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid #eee; }
 
-.value-item p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin: 0;
-}
+/* --- BOTONES --- */
+.btn-primary { background: var(--accent-gradient); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
 
+/* --- RESPONSIVE --- */
 @media (max-width: 992px) {
-    .tech-specs-grid, .value-proposition {
-        grid-template-columns: 1fr;
-    }
+    .hero-grid, .tech-specs-grid, .contact-grid, .value-proposition { grid-template-columns: 1fr; }
+    .hero-text h1 { font-size: 2.2rem; }
 }
