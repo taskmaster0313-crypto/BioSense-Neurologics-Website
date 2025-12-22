@@ -1,165 +1,88 @@
 :root {
-  /* Paleta Refinada */
-  --bg-pure: #ffffff;
-  --bg-soft: #f4f7fa; /* Azul grisáceo muy suave para fondos alternos */
-  --purple-dark: #673ab7;
   --purple-main: #8e44ad;
+  --purple-dark: #673ab7;
   --blue-soft: #658def;
+  --bg-soft: #f8fafd;
   --text-main: #2c3e50;
   --text-muted: #5f6d7a;
-  --accent-gradient: linear-gradient(135deg, #8e44ad 0%, #658def 100%);
-  --radius-lg: 16px;
-  --radius-md: 10px;
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-  --shadow-md: 0 10px 25px rgba(103, 58, 183, 0.1);
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 * { box-sizing: border-box; }
-
-body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  margin: 0;
-  color: var(--text-main);
-  background: var(--bg-pure);
+body { 
+  font-family: 'Inter', system-ui, sans-serif; 
+  margin: 0; 
+  color: var(--text-main); 
   line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+  background-color: #fff;
 }
 
-/* --- Layout & Secciones --- */
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+/* --- ESTRUCTURA --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
 .container.narrow { max-width: 850px; }
-
 .section { padding: 80px 0; }
-.section.white { background: var(--bg-pure); }
-/* Alternamos secciones con este fondo para que no sea todo blanco soso */
-.section.light { background: var(--bg-soft); border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; }
+.section.light { background-color: var(--bg-soft); }
 
-h1, h2, h3 { color: var(--text-main); font-weight: 800; letter-spacing: -0.02em; }
-h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: center; }
-.muted { color: var(--text-muted); text-align: center; max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem; }
-
-/* --- Navegación --- */
-.site-header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+/* --- HEADER --- */
+.site-header { 
+  background: rgba(255,255,255,0.95); 
+  position: sticky; top: 0; z-index: 100; 
+  border-bottom: 1px solid #eee;
   padding: 10px 0;
 }
-
 .header-inner { display: flex; align-items: center; justify-content: space-between; }
-.logo { height: 50px; transition: transform 0.3s ease; }
-.logo:hover { transform: scale(1.05); }
+.logo { height: 50px; width: auto; }
+.nav { display: flex; gap: 20px; align-items: center; }
+.nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; }
 
-.nav { display: flex; gap: 25px; align-items: center; }
-.nav a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
-.nav a:hover { color: var(--purple-main); }
-
-/* --- Botones --- */
-.btn-primary {
-  background: var(--accent-gradient);
-  color: white !important;
-  padding: 12px 28px;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: none;
-  cursor: pointer;
+/* --- HERO (LA CAJA) --- */
+.hero { padding: 100px 0; background: linear-gradient(135deg, #fff 0%, #f4f7ff 100%); }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+.hero-text h1 { font-size: 3rem; color: var(--purple-dark); line-height: 1.1; margin-bottom: 20px; }
+.hero-media img { 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: var(--radius); 
+  box-shadow: var(--shadow); 
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
+/* --- EQUIPO (CIRCULAR) --- */
+.team-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap: 30px; 
+  margin-top: 40px; 
 }
-
-.btn-outline {
-  border: 2px solid var(--purple-main);
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
-  color: var(--purple-main);
-  text-decoration: none;
-  font-weight: 600;
+.team-card { 
+  background: white; padding: 30px; border-radius: var(--radius); 
+  text-align: center; border: 1px solid #eee; transition: 0.3s;
 }
-
-/* --- Hero Section --- */
-.hero { padding: 60px 0; background: radial-gradient(circle at top right, rgba(101, 141, 239, 0.05), transparent); }
-.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-/* --- Tarjetas de Equipo (Optimizado) --- */
-.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
-
-.team-card {
-  background: white;
-  padding: 40px 20px;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(0,0,0,0.05);
-  text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: var(--shadow-sm);
+.team-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+.img-container { 
+  width: 140px; height: 140px; margin: 0 auto 20px; 
+  border-radius: 50%; overflow: hidden; border: 4px solid var(--purple-main);
 }
-
-.team-card:hover {
-  transform: translateY(-12px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--purple-main);
-}
-
-.img-container {
-  width: 130px; height: 130px; margin: 0 auto 20px auto;
-  border-radius: 50%; overflow: hidden;
-  border: 4px solid var(--purple-main);
-  background: #f8f9fa;
-  padding: 3px;
-}
-
 .team-img { width: 100%; height: 100%; object-fit: cover; }
-.team-role { color: var(--purple-main); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+.team-role { color: var(--purple-main); font-weight: 700; display: block; text-transform: uppercase; font-size: 0.8rem; }
 
-/* --- Encuesta Estilo Google (Limpio) --- */
-.survey-background { background-color: var(--bg-soft); padding: 60px 0; }
-
-.form-card {
-  background: white;
-  border-radius: var(--radius-md);
-  border: 1px solid #dadce0;
-  padding: 30px;
-  margin-bottom: 20px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
+/* --- ENCUESTA (GOOGLE STYLE) --- */
+.survey-background { background: #f0f2f1; padding: 60px 0; }
+.form-card { background: white; padding: 30px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #dadce0; }
 .header-card { border-top: 10px solid var(--purple-main); }
+.scale { display: flex; gap: 10px; background: #f8f9fa; padding: 10px; border-radius: 20px; width: fit-content; }
 
-.likert { background: #f8fafd; padding: 20px; border-radius: var(--radius-md); margin: 15px 0; }
-.scale { background: white; padding: 10px 20px; border-radius: 30px; border: 1px solid #edf2f7; width: fit-content; margin-top: 10px; }
-.scale input { accent-color: var(--purple-main); }
-
-/* --- Inputs Globales --- */
-input, select, textarea {
-  border: 1px solid #dadce0;
-  border-radius: 8px;
-  padding: 12px;
-  font-family: inherit;
-  transition: border-color 0.3s, box-shadow 0.3s;
+/* --- BOTONES --- */
+.btn-primary { 
+  background: linear-gradient(90deg, var(--purple-main), var(--blue-soft)); 
+  color: white; border: none; padding: 12px 30px; border-radius: 8px; 
+  font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block;
 }
+.btn-outline { border: 2px solid var(--purple-main); color: var(--purple-main); padding: 8px 16px; border-radius: 8px; text-decoration: none; }
 
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--purple-main);
-  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.15);
-}
-
-/* --- Footer --- */
-.site-footer { background: var(--bg-soft); padding: 40px 0; border-top: 1px solid #edf2f7; }
-.footer-inner { display: flex; justify-content: space-between; align-items: center; }
-
-/* Responsive */
-@media(max-width:900px){
-  .hero-grid { grid-template-columns: 1fr; text-align: center; }
-  .hero-text h1 { font-size: 2.5rem; }
-  .nav { display: none; } /* Aquí podrías implementar un menú hamburguesa */
+/* --- AJUSTES DE IMÁGENES GRANDES --- */
+.product-large-img { 
+  max-width: 400px !important; 
+  margin: 40px auto; 
+  display: block; 
 }
