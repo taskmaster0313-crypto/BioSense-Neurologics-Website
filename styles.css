@@ -162,9 +162,9 @@ a.btn-primary:focus, button:focus, input:focus, textarea:focus { outline:3px sol
     transition: transform 0.2s ease;
 }
 
-/* Tarjeta principal con franja de color superior */
+/* Tarjeta principal con franja de color morada */
 .header-card {
-    border-top: 10px solid #2a5a8a; /* Color corporativo BioSense */
+    border-top: 10px solid #8e44ad !important; /* Aquí he puesto un morado elegante */
 }
 
 .form-card h3 {
