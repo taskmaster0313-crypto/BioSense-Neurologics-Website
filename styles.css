@@ -190,3 +190,64 @@ body {
     border-radius: 10px !important;
     display: block !important;
 }
+/* DISEÑO DE PRODUCTO */
+.product-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.biomarker-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.biomarker-list li {
+    background: white;
+    margin-bottom: 10px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border-left: 4px solid var(--purple-main);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    font-size: 0.95rem;
+}
+
+.biomarker-list strong {
+    color: var(--purple-main);
+}
+
+.product-visual {
+    position: relative;
+    text-align: center;
+}
+
+.product-badge {
+    position: absolute;
+    bottom: -10px;
+    right: 20%;
+    background: var(--accent-gradient);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.icon-circle {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* RESPONSIVE PRODUCTO */
+@media(max-width: 850px) {
+    .product-info-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
