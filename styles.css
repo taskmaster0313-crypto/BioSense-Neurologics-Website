@@ -168,3 +168,21 @@ body {
         grid-template-columns: 1fr; /* Una columna en móviles */
     }
 }
+#contacto h2 {
+    color: var(--text-main);
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+#contacto h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* Línea corta y elegante */
+    height: 4px;
+    background: var(--accent-gradient); /* Usamos tu degradado morado */
+    border-radius: 2px;
+}
