@@ -214,3 +214,47 @@ a.btn-primary:focus, button:focus, input:focus, textarea:focus { outline:3px sol
     outline: none;
     border: 2px solid #2a5a8a;
 }
+/* Contenedor general de la encuesta */
+.survey-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de cada pregunta */
+.survey-question {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0;
+}
+
+/* Título de la pregunta */
+.survey-question label {
+  font-weight: 600;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 12px;
+  color: #202124;
+}
+
+/* Inputs y selects */
+.survey-question input,
+.survey-question select,
+.survey-question textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid #dadce0;
+  font-size: 0.95rem;
+}
+
+/* Focus estilo Google */
+.survey-question input:focus,
+.survey-question select:focus,
+.survey-question textarea:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
