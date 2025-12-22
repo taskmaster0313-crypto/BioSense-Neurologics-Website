@@ -207,112 +207,132 @@
       </div>
     </section>
   </main>
-<section id="encuesta" class="section white">
+<section id="encuesta" class="section survey-background">
   <div class="container narrow">
-    <h2>Encuesta de valoración de clientes</h2>
-    <p class="muted">
-      Esta encuesta tiene como objetivo recoger la opinión de profesionales que han evaluado el kit
-      <strong>NeuroMetrix™ Early Risk Panel</strong>. Las respuestas son anónimas y se utilizarán exclusivamente
-      con fines de mejora del producto.
-    </p>
+    
+    <div class="form-card header-card">
+      <h2>Encuesta de valoración de clientes</h2>
+      <p class="muted">
+        Esta encuesta tiene como objetivo recoger la opinión de profesionales que han evaluado el kit
+        <strong>NeuroMetrix™ Early Risk Panel</strong>. Las respuestas son anónimas y se utilizarán exclusivamente
+        con fines de mejora del producto.
+      </p>
+    </div>
 
     <form class="survey-form">
 
-      <!-- BLOQUE 1 -->
-      <h3>Información general</h3>
+      <div class="form-card">
+        <h3>Información general</h3>
+        <label>Tipo de institución</label>
+        <select required>
+          <option value="">Seleccione una opción</option>
+          <option>Hospital</option>
+          <option>Laboratorio clínico</option>
+          <option>Centro de investigación</option>
+          <option>Empresa biotecnológica</option>
+          <option>Otro</option>
+        </select>
 
-      <label>Tipo de institución</label>
-      <select required>
-        <option value="">Seleccione una opción</option>
-        <option>Hospital</option>
-        <option>Laboratorio clínico</option>
-        <option>Centro de investigación</option>
-        <option>Empresa biotecnológica</option>
-        <option>Otro</option>
-      </select>
+        <label style="margin-top: 15px; display: block;">Rol del encuestado</label>
+        <select required>
+          <option value="">Seleccione una opción</option>
+          <option>Técnico de laboratorio</option>
+          <option>Investigador</option>
+          <option>Clínico</option>
+          <option>Responsable de unidad</option>
+          <option>Otro</option>
+        </select>
+      </div>
 
-      <label>Rol del encuestado</label>
-      <select required>
-        <option value="">Seleccione una opción</option>
-        <option>Técnico de laboratorio</option>
-        <option>Investigador</option>
-        <option>Clínico</option>
-        <option>Responsable de unidad</option>
-        <option>Otro</option>
-      </select>
+      <div class="form-card">
+        <h3>Evaluación técnica del producto</h3>
+        
+        <div class="likert">
+          <p>El kit NeuroMetrix™ es técnicamente fiable.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1">
+            <span>5</span>
+          </div>
+        </div>
 
-      <!-- FUNCIÓN PARA ESCALAS -->
-      <h3>Evaluación técnica del producto</h3>
+        <div class="likert">
+          <p>La reproducibilidad de los resultados es adecuada.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2">
+            <span>5</span>
+          </div>
+        </div>
 
-      <div class="likert">
-        <p>El kit NeuroMetrix™ es técnicamente fiable.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1"><input type="radio" name="q1"><span>5</span>
+        <div class="likert">
+          <p>La multiplexación de biomarcadores aporta valor frente a métodos convencionales.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3">
+            <span>5</span>
+          </div>
         </div>
       </div>
 
-      <div class="likert">
-        <p>La reproducibilidad de los resultados es adecuada.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2"><input type="radio" name="q2"><span>5</span>
+      <div class="form-card">
+        <h3>Usabilidad e implementación</h3>
+        <div class="likert">
+          <p>El protocolo es claro y fácil de seguir.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4">
+            <span>5</span>
+          </div>
         </div>
       </div>
 
-      <div class="likert">
-        <p>La multiplexación de biomarcadores aporta valor frente a métodos convencionales.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3"><input type="radio" name="q3"><span>5</span>
+      <div class="form-card">
+        <h3>Valor clínico y utilidad</h3>
+        <div class="likert">
+          <p>El kit aporta información relevante para la detección temprana del riesgo biológico.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5">
+            <span>5</span>
+          </div>
         </div>
       </div>
 
-      <!-- BLOQUE USABILIDAD -->
-      <h3>Usabilidad e implementación</h3>
-
-      <div class="likert">
-        <p>El protocolo es claro y fácil de seguir.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4"><input type="radio" name="q4"><span>5</span>
+      <div class="form-card">
+        <h3>Satisfacción global</h3>
+        <div class="likert">
+          <p>Satisfacción global con NeuroMetrix™.</p>
+          <div class="scale">
+            <span>1</span>
+            <input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6">
+            <span>5</span>
+          </div>
         </div>
       </div>
 
-      <!-- BLOQUE VALOR -->
-      <h3>Valor clínico y utilidad</h3>
+      <div class="form-card">
+        <h3>Comentarios abiertos</h3>
+        
+        <label>Aspectos más positivos del kit</label>
+        <textarea rows="3" style="width:100%; margin-bottom:15px;"></textarea>
 
-      <div class="likert">
-        <p>El kit aporta información relevante para la detección temprana del riesgo biológico.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5"><input type="radio" name="q5"><span>5</span>
-        </div>
+        <label>Aspectos a mejorar</label>
+        <textarea rows="3" style="width:100%; margin-bottom:15px;"></textarea>
+
+        <label>Sugerencias para futuras versiones</label>
+        <textarea rows="3" style="width:100%;"></textarea>
       </div>
 
-      <!-- BLOQUE SATISFACCIÓN -->
-      <h3>Satisfacción global</h3>
-
-      <div class="likert">
-        <p>Satisfacción global con NeuroMetrix™.</p>
-        <div class="scale">
-          <span>1</span><input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6"><input type="radio" name="q6"><span>5</span>
-        </div>
+      <div style="text-align: center;">
+        <button type="submit" class="btn-primary" style="margin: 20px 0 40px 0; padding: 12px 40px;">
+          Enviar encuesta
+        </button>
       </div>
-
-      <!-- BLOQUE ABIERTO -->
-      <h3>Comentarios abiertos</h3>
-
-      <label>Aspectos más positivos del kit</label>
-      <textarea rows="3"></textarea>
-
-      <label>Aspectos a mejorar</label>
-      <textarea rows="3"></textarea>
-
-      <label>Sugerencias para futuras versiones</label>
-      <textarea rows="3"></textarea>
-
-      <button type="submit" class="btn-primary" style="margin-top:20px;">
-        Enviar encuesta
-      </button>
 
     </form>
   </div>
+</section>
 </section>
 
   <footer class="site-footer">
