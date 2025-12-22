@@ -88,7 +88,7 @@ body {
   display: block; 
   margin: 0 auto; 
   /* TRUCO VISUAL: Rotación mínima para compensar la perspectiva */
-    transform: rotate(-1.5deg); 
+    transform: rotate(-1.0deg); 
     transition: transform 0.4s ease; /* Para que si lo cambias, se mueva suave */
 }
 
