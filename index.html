@@ -176,35 +176,60 @@
   </div>
 </section>
 
-    <section id="contacto" class="section light">
-      <div class="container narrow">
-        <h2>Contacto</h2>
-        <p class="muted">¿Interesado en colaboración, validación o compras institucionales? Contáctanos.</p>
-        <div class="contact-grid">
-          <form class="contact-form" action="mailto:info@biosense.example?subject=Interés%20NeuroMetrix" method="post" enctype="text/plain">
-            <label>Nombre</label>
-            <input type="text" name="name" required />
-            <label>Email</label>
-            <input type="email" name="email" required />
-            <label>Mensaje</label>
-            <textarea name="message" rows="5" required></textarea>
-            <div class="form-row">
-              <button type="submit" class="btn-primary">Enviar</button>
-              <button type="reset" class="btn-ghost">Borrar</button>
-            </div>
-            <p class="note">Para presentaciones o entregables académicos puedes usar el email <strong>info@biosense.example</strong>.</p>
-          </form>
-          <div class="contact-info">
-            <h3>Oficina</h3>
-            <p>Polígono Industrial El Nevero, Badajoz</p>
-            <h3>Redes</h3>
-            <p>LinkedIn: BioSense Neurologics (recomendado)</p>
-            <h3>Más documentación</h3>
-            <p>Plan de negocio y dossier técnico disponibles a petición.</p>
+  <section id="contacto" class="section light">
+  <div class="container">
+    <h2>Contacto</h2>
+    <p class="muted">¿Interesado en colaboración, validación o compras institucionales? Contáctanos.</p>
+    
+    <div class="contact-grid">
+      <div class="contact-form-container">
+        <form class="contact-form" action="mailto:info@biosense.example" method="post" enctype="text/plain">
+          <div class="form-group">
+            <label>Nombre completo</label>
+            <input type="text" name="name" placeholder="Ej. Juan Pérez" required />
           </div>
+          
+          <div class="form-group">
+            <label>Correo electrónico</label>
+            <input type="email" name="email" placeholder="juan@ejemplo.com" required />
+          </div>
+          
+          <div class="form-group">
+            <label>Mensaje</label>
+            <textarea name="message" rows="5" placeholder="Cuéntanos cómo podemos ayudarte..." required></textarea>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Enviar mensaje</button>
+            <button type="reset" class="btn-ghost">Limpiar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-info-card">
+        <div class="info-item">
+          <h4>📍 Oficina</h4>
+          <p>Polígono Industrial El Nevero, Badajoz</p>
+        </div>
+        
+        <div class="info-item">
+          <h4>🔗 Redes</h4>
+          <p>LinkedIn: <a href="#">BioSense Neurologics</a></p>
+        </div>
+        
+        <div class="info-item">
+          <h4>📄 Documentación</h4>
+          <p>Plan de negocio y dossier técnico disponibles a petición.</p>
+        </div>
+        
+        <div class="info-footer">
+          <p>También puedes escribirnos a:</p>
+          <strong>info@biosense.example</strong>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   </main>
 <section id="encuesta" class="section survey-background">
   <div class="container narrow">
