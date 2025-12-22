@@ -251,3 +251,118 @@ body {
         gap: 30px;
     }
 }
+/* SECCIÓN PRODUCTO - ESTILO CIENTÍFICO */
+.product-expert {
+    background-color: #ffffff;
+    padding: 100px 0;
+    border-top: 1px solid #eee;
+}
+
+.eyebrow {
+    color: var(--purple-main);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.product-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.lead-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+/* Tabla de Biomarcadores */
+.tech-specs-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+    background: var(--bg-soft);
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.biomarker-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.biomarker-table th, .biomarker-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.biomarker-table th {
+    background: var(--purple-main);
+    color: white;
+    font-weight: 600;
+}
+
+.biomarker-table tr:hover {
+    background: rgba(142, 68, 173, 0.05);
+}
+
+/* Imagen y Tag */
+.image-overlay-card {
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    padding: 20px;
+}
+
+.tech-tag {
+    background: #2c3e50;
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+    border-radius: 4px;
+}
+
+/* Propuesta de valor */
+.value-proposition {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.value-item {
+    border-left: 3px solid var(--purple-main);
+    padding-left: 25px;
+}
+
+.value-item h4 {
+    margin: 0 0 10px 0;
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.value-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+@media (max-width: 992px) {
+    .tech-specs-grid, .value-proposition {
+        grid-template-columns: 1fr;
+    }
+}
