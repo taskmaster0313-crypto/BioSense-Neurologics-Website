@@ -1,327 +1,165 @@
-:root{
-  --bg: #ffffff;
-  --purple-dark: #78419c;
-  --purple: #9b50c1;
-  --blue: #658def;
-  --text: #1f2933;
-  --muted: #56606a;
-  --radius: 12px;
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--text); background:var(--bg); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
-.container{max-width:1100px; margin:0 auto; padding:24px;}
-.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px;}
-.site-header{border-bottom:1px solid rgba(0,0,0,0.05); background:transparent; position:sticky; top:0; z-index:40;}
-.logo{height:64px;}
-.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;}
-
-.nav{display:flex; gap:18px; align-items:center;}
-.nav a{color:var(--muted); text-decoration:none; font-weight:600;}
-.btn-outline{border:1px solid var(--purple-dark); padding:8px 12px; border-radius:8px; color:var(--purple-dark);}
-
-.nav-toggle{display:none; background:none; border:0; font-size:20px;}
-
-.hero{padding:48px 0;}
-.hero-grid{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center;}
-.hero-text h1{font-size:36px; margin:0 0 12px; color:var(--purple-dark);}
-.lead{font-size:18px; margin:0 0 16px; color:var(--muted);}
-.cta-row{margin:18px 0;}
-.btn-primary{background:linear-gradient(90deg,var(--purple) 0%,var(--blue) 100%); color:white; padding:12px 18px; border-radius:10px; text-decoration:none; font-weight:700;}
-.btn-ghost{background:transparent; border:2px solid rgba(0,0,0,0.06); padding:10px 16px; border-radius:10px; margin-left:10px; text-decoration:none; color:var(--muted);}
-
-.highlights{margin-top:18px; color:var(--muted); list-style:disc; padding-left:18px;}
-
-.card{background:white; border-radius:12px; box-shadow:0 8px 20px rgba(18,18,18,0.06); padding:14px; display:block; text-align:center;}
-.card img{max-width:100%; border-radius:8px; display:block; margin:0 auto;}
-
-.card-caption{font-size:14px; margin-top:8px; color:var(--muted);}
-
-.section{padding:48px 0;}
-.section.white{background:var(--bg);}
-.section.light{background:linear-gradient(180deg, rgba(250,250,252,1), rgba(255,255,255,1));}
-
-.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px;}
-.feature{padding:18px; border-radius:12px; border:1px solid rgba(0,0,0,0.04);}
-
-.two-col{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:18px; color:var(--muted);}
-
-.team-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px;}
-.team-card{padding:14px; border-radius:10px; background:linear-gradient(180deg, rgba(250,250,255,1), rgba(249,249,252,1)); border:1px solid rgba(0,0,0,0.03);}
-
-.container.narrow{max-width:800px;}
-
-.contact-grid{display:grid; grid-template-columns:1fr 320px; gap:24px; align-items:start; margin-top:18px;}
-.contact-form label{display:block; margin-top:12px; font-weight:600; color:var(--muted);}
-.contact-form input,.contact-form textarea{width:100%; padding:10px; margin-top:6px; border-radius:8px; border:1px solid rgba(0,0,0,0.08);}
-.form-row{margin-top:12px; display:flex; gap:10px;}
-
-.note{font-size:13px; color:var(--muted); margin-top:8px;}
-
-.site-footer{border-top:1px solid rgba(0,0,0,0.05); margin-top:40px; padding:18px 0; background:transparent;}
-.footer-inner{display:flex; justify-content:space-between; align-items:center; gap:12px; color:var(--muted);}
-.footer-links a{margin-left:12px; text-decoration:none; color:var(--muted)}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr; text-align:center;}
-  .hero-media{order:-1;}
-  .grid-3{grid-template-columns:1fr; }
-  .two-col{grid-template-columns:1fr;}
-  .team-grid{grid-template-columns:repeat(2,1fr);}
-  .contact-grid{grid-template-columns:1fr; }
-  .nav-toggle{display:block;}
-  .nav{position:fixed; top:72px; right:18px; background:white; border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:12px; box-shadow:0 8px 30px rgba(0,0,0,0.08); transform:translateY(-20px); opacity:0; pointer-events:none; transition:all .18s ease;}
-  .nav.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+:root {
+  /* Paleta Refinada */
+  --bg-pure: #ffffff;
+  --bg-soft: #f4f7fa; /* Azul grisáceo muy suave para fondos alternos */
+  --purple-dark: #673ab7;
+  --purple-main: #8e44ad;
+  --blue-soft: #658def;
+  --text-main: #2c3e50;
+  --text-muted: #5f6d7a;
+  --accent-gradient: linear-gradient(135deg, #8e44ad 0%, #658def 100%);
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md: 0 10px 25px rgba(103, 58, 183, 0.1);
 }
 
-/* small tweak for accessibility */
-a.btn-primary:focus, button:focus, input:focus, textarea:focus { outline:3px solid rgba(121,65,156,0.18); outline-offset:3px; }
-.survey-form label {
-  display: block;
-  margin-top: 16px;
-  font-weight: 600;
-  color: var(--muted);
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  margin: 0;
+  color: var(--text-main);
+  background: var(--bg-pure);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
-.survey-form select,
-.survey-form textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 6px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.1);
+/* --- Layout & Secciones --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+.container.narrow { max-width: 850px; }
+
+.section { padding: 80px 0; }
+.section.white { background: var(--bg-pure); }
+/* Alternamos secciones con este fondo para que no sea todo blanco soso */
+.section.light { background: var(--bg-soft); border-top: 1px solid #edf2f7; border-bottom: 1px solid #edf2f7; }
+
+h1, h2, h3 { color: var(--text-main); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 2.2rem; margin-bottom: 1rem; text-align: center; }
+.muted { color: var(--text-muted); text-align: center; max-width: 700px; margin: 0 auto 40px auto; font-size: 1.1rem; }
+
+/* --- Navegación --- */
+.site-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
 }
 
-.likert {
-  margin: 18px 0;
-}
+.header-inner { display: flex; align-items: center; justify-content: space-between; }
+.logo { height: 50px; transition: transform 0.3s ease; }
+.logo:hover { transform: scale(1.05); }
 
-.likert p {
-  margin-bottom: 6px;
-  font-weight: 500;
-}
+.nav { display: flex; gap: 25px; align-items: center; }
+.nav a { color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: color 0.3s; }
+.nav a:hover { color: var(--purple-main); }
 
-.scale {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.scale input {
-  accent-color: var(--purple);
-}
-.slider {
-  position: relative;
-}
-
-.slider img {
-  transition: opacity 0.4s ease;
-}
-
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  transform: translateY(-50%);
-}
-
-.slider-controls button {
-  background: rgba(120, 65, 156, 0.85);
+/* --- Botones --- */
+.btn-primary {
+  background: var(--accent-gradient);
+  color: white !important;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
   border: none;
-  color: white;
-  font-size: 22px;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
   cursor: pointer;
 }
 
-.slider-controls button:hover {
-  background: rgba(155, 80, 193, 0.95);
-}
-/* Estilos específicos para el rediseño de la encuesta */
-
-.survey-background {
-    background-color: #f0f2f1; /* Color de fondo grisáceo para resaltar las tarjetas blancas */
-    padding-top: 50px;
-    padding-bottom: 50px;
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(142, 68, 173, 0.3);
 }
 
-.form-card {
-    background: #ffffff;
-    border: 1px solid #dadce0;
-    border-radius: 8px;
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-    transition: transform 0.2s ease;
-}
-
-/* Tarjeta principal con franja de color morada */
-.header-card {
-    border-top: 10px solid #8e44ad !important; /* Aquí he puesto un morado elegante */
-}
-
-.form-card h3 {
-    margin-top: 0;
-    color: #202124;
-    font-size: 1.25rem;
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-/* Ajustes para las preguntas tipo Likert */
-.likert {
-    margin-bottom: 20px;
-    padding: 15px;
-    border-radius: 4px;
-}
-
-.likert p {
-    font-weight: 500;
-    margin-bottom: 10px;
-    color: #3c4043;
-}
-
-.scale {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    justify-content: flex-start;
-    background: #f8f9fa;
-    padding: 10px 20px;
-    border-radius: 20px;
-    width: fit-content;
-}
-
-/* Estilo para los selectores y áreas de texto */
-.form-card select, 
-.form-card textarea {
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    padding: 10px;
-    font-family: inherit;
-}
-
-.form-card select:focus, 
-.form-card textarea:focus {
-    outline: none;
-    border: 2px solid #2a5a8a;
-}
-/* Contenedor general de la encuesta */
-.survey-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Tarjeta de cada pregunta */
-.survey-question {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 20px 24px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e0e0e0;
-}
-
-/* Título de la pregunta */
-.survey-question label {
+.btn-outline {
+  border: 2px solid var(--purple-main);
+  padding: 10px 20px;
+  border-radius: var(--radius-md);
+  color: var(--purple-main);
+  text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
-  display: block;
-  margin-bottom: 12px;
-  color: #202124;
 }
 
-/* Inputs y selects */
-.survey-question input,
-.survey-question select,
-.survey-question textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 6px;
-  border: 1px solid #dadce0;
-  font-size: 0.95rem;
-}
+/* --- Hero Section --- */
+.hero { padding: 60px 0; background: radial-gradient(circle at top right, rgba(101, 141, 239, 0.05), transparent); }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-/* Focus estilo Google */
-.survey-question input:focus,
-.survey-question select:focus,
-.survey-question textarea:focus {
-  outline: none;
-  border-color: #1a73e8;
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
-}
-/* REGLAS CRÍTICAS PARA EL EQUIPO - Forzado con !important donde es necesario */
-
-.team-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
-    gap: 30px !important;
-    margin-top: 50px !important;
-    padding: 20px !important;
-}
+/* --- Tarjetas de Equipo (Optimizado) --- */
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
 
 .team-card {
-    background: #ffffff !important;
-    padding: 30px 20px !important;
-    border-radius: 15px !important;
-    border: 1px solid #e0e0e0 !important;
-    text-align: center !important;
-    transition: all 0.3s ease-in-out !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
-    cursor: pointer;
+  background: white;
+  padding: 40px 20px;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(0,0,0,0.05);
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-sm);
 }
 
-/* EFECTO HOVER */
 .team-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 15px 30px rgba(103, 58, 183, 0.2) !important;
-    border-color: #8e44ad !important;
+  transform: translateY(-12px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--purple-main);
 }
 
-/* CONTENEDOR DE IMAGEN (Para que no salgan enormes) */
 .img-container {
-    width: 140px !important;
-    height: 140px !important;
-    margin: 0 auto 20px auto !important;
-    border-radius: 50% !important;
-    overflow: hidden !important;
-    border: 4px solid #8e44ad !important;
-    background-color: #f9f9f9 !important;
+  width: 130px; height: 130px; margin: 0 auto 20px auto;
+  border-radius: 50%; overflow: hidden;
+  border: 4px solid var(--purple-main);
+  background: #f8f9fa;
+  padding: 3px;
 }
 
-.team-img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important; /* Esto recorta la foto para que encaje en el círculo */
-    display: block !important;
+.team-img { width: 100%; height: 100%; object-fit: cover; }
+.team-role { color: var(--purple-main); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 10px; }
+
+/* --- Encuesta Estilo Google (Limpio) --- */
+.survey-background { background-color: var(--bg-soft); padding: 60px 0; }
+
+.form-card {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid #dadce0;
+  padding: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
-/* TEXTOS */
-.team-card h4 {
-    margin: 15px 0 5px 0 !important;
-    font-size: 1.2rem !important;
-    color: #333 !important;
+.header-card { border-top: 10px solid var(--purple-main); }
+
+.likert { background: #f8fafd; padding: 20px; border-radius: var(--radius-md); margin: 15px 0; }
+.scale { background: white; padding: 10px 20px; border-radius: 30px; border: 1px solid #edf2f7; width: fit-content; margin-top: 10px; }
+.scale input { accent-color: var(--purple-main); }
+
+/* --- Inputs Globales --- */
+input, select, textarea {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 12px;
+  font-family: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.team-role {
-    display: block !important;
-    color: #8e44ad !important;
-    font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    text-transform: uppercase !important;
-    margin-bottom: 12px !important;
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--purple-main);
+  box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.15);
 }
 
-.team-card p {
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-    color: #666 !important;
+/* --- Footer --- */
+.site-footer { background: var(--bg-soft); padding: 40px 0; border-top: 1px solid #edf2f7; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; }
+
+/* Responsive */
+@media(max-width:900px){
+  .hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .nav { display: none; } /* Aquí podrías implementar un menú hamburguesa */
 }
