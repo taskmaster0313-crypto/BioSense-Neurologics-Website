@@ -241,52 +241,44 @@ body {
 .google-input:focus {
     border-bottom: 2px solid var(--purple-main);
 }
-/* --- ESTILO PARA LAS FLECHAS DEL CARRUSEL --- */
+/* --- REPARACIÓN FINAL DE FLECHAS --- */
 
-/* Contenedor relativo para poder posicionar las flechas */
 .hero-image-container {
     position: relative;
     display: inline-block;
+    max-width: 100%; /* Para que no se desmadre en pantallas pequeñas */
 }
 
-/* Estilo general de las flechas */
 .carousel-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--purple-main); /* Tu morado corporativo */
-    color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%; /* Redonditas */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background-color: var(--purple-main) !important; /* Fuerza el color morado */
+    color: white !important;
+    border: none !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
     cursor: pointer;
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 24px;
     transition: all 0.3s ease;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    font-size: 1.2rem;
-    line-height: 0;
 }
 
-/* Posición Izquierda y Derecha */
+/* Las sacamos fuera de la imagen para que se vean bien */
 .arrow-left {
-    left: -15px; /* Sobresale un poco por la izquierda */
+    left: -20px !important;
 }
 
 .arrow-right {
-    right: -15px; /* Sobresale un poco por la derecha */
+    right: -20px !important;
 }
 
-/* Efecto al pasar el ratón */
 .carousel-arrow:hover {
-    background-color: #6a1b9a; /* Un morado un poco más oscuro */
-    transform: translateY(-50%) scale(1.1);
-}
-
-/* Ajuste para que las flechas no se vean "sosas" */
-.carousel-arrow::before {
-    font-weight: bold;
+    background-color: #5a189a !important; /* Un morado más intenso al pulsar */
+    transform: translateY(-50%) scale(1.1) !important;
 }
