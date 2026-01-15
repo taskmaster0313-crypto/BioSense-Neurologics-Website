@@ -329,3 +329,11 @@ body {
     opacity: 0.9; /* Le da un toque elegante un pelín transparente */
     text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Ayuda a que resalte sobre el fondo */
 }
+/* CAMBIO DE COLOR ESPECÍFICO PARA LA FRASE DEL KIT */
+.hero-text p.lead, 
+.hero-text .lead {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    font-weight: 500; /* Le damos un poco más de cuerpo para que se lea mejor */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important; /* Sombra negra para que resalte sobre el fondo */
+}
