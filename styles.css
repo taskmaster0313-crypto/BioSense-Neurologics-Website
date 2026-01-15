@@ -323,3 +323,9 @@ body {
     background-color: #5a189a !important; /* Un morado más intenso al pulsar */
     transform: translateY(-50%) scale(1.1) !important;
 }
+/* Forzar el texto descriptivo del home a blanco */
+.hero-text .lead {
+    color: #ffffff !important;
+    opacity: 0.9; /* Le da un toque elegante un pelín transparente */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Ayuda a que resalte sobre el fondo */
+}
