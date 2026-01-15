@@ -64,12 +64,17 @@
       </div>
     </div>
     <div class="hero-media">
-      <div class="card slider">
-        <img id="slider-image" src="caja.png" alt="Caja NeuroMetrix" style="transition: opacity 0.4s ease;">
-        <div class="slider-controls">
-          <button onclick="prevImage()">‹</button>
-          <button onclick="nextImage()">›</button>
-        </div>
+      <div class="hero-media">
+  <div class="hero-image-container">
+    
+    <button class="carousel-arrow arrow-left" onclick="prevImage()">‹</button>
+    
+    <img id="slider-image" src="caja.png" alt="Caja NeuroMetrix" style="transition: opacity 0.4s ease; display: block; width: 100%; border-radius: 20px;">
+    
+    <button class="carousel-arrow arrow-right" onclick="nextImage()">›</button>
+
+  </div>
+</div>
       </div>
     </div>
   </div>
