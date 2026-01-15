@@ -38,11 +38,52 @@ body {
 .nav a { text-decoration: none; color: var(--text-muted); font-weight: 600; transition: 0.3s; }
 .nav a:hover { color: var(--purple-main); }
 
-/* --- HERO --- */
-.hero { padding: 100px 0; background: linear-gradient(135deg, #fff 0%, #f4f7ff 100%); }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
-.hero-text h1 { font-size: 3rem; color: var(--purple-dark); line-height: 1.1; margin-bottom: 20px; }
-.hero-media img { max-width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+/* --- NUEVO HERO CON TU IMAGEN FONDO-WEB.JPEG --- */
+.hero { 
+    position: relative;
+    padding: 120px 0; 
+    /* Cambiamos el blanco por tu imagen */
+    background: url('fondo-web.jpeg') no-repeat center center/cover; 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* La capa oscura para que el texto sea legible */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(142, 68, 173, 0.5) 100%);
+    z-index: 1;
+}
+
+/* Mantenemos tu cuadrícula pero la subimos de capa */
+.hero-grid { 
+    position: relative;
+    z-index: 2;
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 40px; 
+    align-items: center; 
+}
+
+/* El título ahora en blanco para que resalte */
+.hero-text h1 { 
+    font-size: 3.5rem; /* Un poco más grande para impactar */
+    color: #ffffff !important; 
+    line-height: 1.1; 
+    margin-bottom: 20px; 
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
+}
+
+/* Ajuste de la imagen del kit */
+.hero-media img { 
+    max-width: 100%; 
+    height: auto; 
+    border-radius: var(--radius); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3); 
+}
 
 /* --- SECCIÓN PRODUCTO (VERSIÓN PREMIUM CON MOVIMIENTO) --- */
 .product-expert { 
