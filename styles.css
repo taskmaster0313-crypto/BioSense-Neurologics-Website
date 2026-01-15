@@ -337,3 +337,17 @@ body {
     font-weight: 500; /* Le damos un poco más de cuerpo para que se lea mejor */
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8) !important; /* Sombra negra para que resalte sobre el fondo */
 }
+/* CAMBIO DEFINITIVO A BLANCO PARA LA FRASE DEL KIT */
+.hero-text p.lead {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+    font-size: 1.25rem !important;
+    font-weight: 500 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7) !important;
+}
+
+/* Por si acaso el h1 también da problemas */
+.hero-text h1 {
+    color: #FFFFFF !important;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6) !important;
+}
